@@ -22,8 +22,8 @@ title: "Home"
 
 <div class="container">
     <div class="social content">
-        <a href="https://www.linkedin.com/in/evertonpaul/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://twitter.com/PatternPaul"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/evertonpaul/"><span class="visually-hidden">LinkedIn</span><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/PatternPaul"><span class="visually-hidden">Twitter</span><i class="fab fa-twitter"></i></a>
     </div>
 
     <div id="testimonials" class="content">
@@ -42,8 +42,8 @@ title: "Home"
             <img src="{{ post.splash }}">
             <p class="date">{{ post.date | date_to_string }}</p>
             <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            {{ post.excerpt }}
-            <p><a href="{{ post.url }}">Read More...</a></p>
+            {{ post.excerpt }} ...
+
         </div>
         {% endfor %}
     </div>

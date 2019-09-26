@@ -11,7 +11,7 @@
     <div class="header">
         <div class="content">
             <div class="logo">
-                <a href="/"><img src="{{ "/assets/img/DataConstructInc.png" | relative_url }}" alt=""></a>
+                <a href="/"><img src="{{ "/assets/img/DataConstructInc.png" | relative_url }}" alt="DataConstruct Inc. Logo"></a>
             </div>
             <nav>
                 <a href="/">Home</a>
@@ -25,7 +25,7 @@
         <div class="blogEntry">
             <p class="date">{{ page.date | date_to_string }}</p>
             <h2>{{ page.title }}</h2>
-            <img src="{{ page.splash }}">
+            <img src="{{ page.splash }}" alt="{{ page.title }}">
             {{ content }}
         </div>
 
@@ -38,8 +38,7 @@
                     <img src="{{ post.splash }}">
                     <p class="date">{{ post.date | date_to_string }}</p>
                     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                    {{ post.excerpt }}
-                    <p><a href="{{ post.url }}">Read More...</a></p>
+                    {{ post.excerpt }} ...
                 </div>
                 {% endfor %}
             </div>
@@ -48,7 +47,7 @@
     </div>
     <footer>
         <div class="content">
-            <img src="{{ "/assets/img/DataConstructInc-white.png" | relative_url }}" alt="">
+            <img src="{{ "/assets/img/DataConstructInc-white.png" | relative_url }}" alt="DataConstruct Inc. logo">
             <p>&copy; 2019</p>
         </div>
     </footer>

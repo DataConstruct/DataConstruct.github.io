@@ -84,3 +84,13 @@ small {font-size: .7em;}
     .hero h1 { font-size: 1.3em; }
     .hero img {width: 75%; margin: 0 auto;}
 }
+
+.visually-hidden {
+    clip-path: inset(100%);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
