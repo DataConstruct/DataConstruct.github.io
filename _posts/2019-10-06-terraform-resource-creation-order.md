@@ -12,7 +12,7 @@ Terraform generates a graph of the dependency tree prior to planning the order o
 
 For example, creating a subnet within a VNET using the name value as shown below will cause issues because Terraform doesn't understand that it needs to create the VNET before the subnet, even though we provide the eventual name of the VNET (`VNET-NAME`).
 
-```HCL
+~~~ hcl
 
 resource "azurerm_virtual_network" "vnet" {
     name = "VNET-NAME"
@@ -23,11 +23,11 @@ resource "azurerm_subnet" "vnet_subnet" {
     virtual_network_name = "VNET-NAME"
 }
 
-```
+~~~
 
 To tell Terraform to create the VNET first, use an output variable from the VNET (`azurerm_virtual_network.vnet.name`).
 
-```HCL
+~~~ hcl
 
 resource "azurerm_virtual_network" "vnet" {
     name = "VNET-NAME"
@@ -38,12 +38,12 @@ resource "azurerm_subnet" "vnet_subnet" {
     virtual_network_name = azurerm_virtual_network.vnet.name
 }
 
-```
+~~~
 
 This works with any output variable from a resource. Lets say both resources use the same resource group.
 You can force the order by using the output resource group name from the first Terraform resource and pipe it into the second Terraform resource. The resource group names have no significance in relation to dependency, but Terraform will assume there is a dependency through the usage of the output variables.
 
-```HCL
+~~~ hcl
 
 resource "azurerm_virtual_network" "vnet" {
     name = "VNET-NAME"
@@ -56,7 +56,7 @@ resource "azurerm_subnet" "vnet_subnet" {
     resource_group_name = azurerm_virtual_network.vnet.resource_group_name
 }
 
-```
+~~~
 
 ### Defining Dependencies
 
@@ -64,7 +64,7 @@ Terraform also allows you to explicitly define dependencies for each resource, u
 
 This can be helpful in situations where it may be hard to pass outputs from one resource to another. The example below tells Terraform that the resource `vnet_subnet` depends on `azurerm_virtual_network.vnet`.
 
-```HCL
+~~~ hcl
 
 resource "azurerm_virtual_network" "vnet" {
     name = "VNET-NAME"
@@ -76,7 +76,7 @@ resource "azurerm_subnet" "vnet_subnet" {
     depends_on = [azurerm_virtual_network.vnet] 
 }
 
-```
+~~~
 
 ### Learn More
 
