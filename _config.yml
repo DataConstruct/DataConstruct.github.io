@@ -1,7 +1,7 @@
 url: "https://www.dataconstruct.ca" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/" # the subpath of your site, e.g. /blog
 title: "DataConstruct Inc." # the name of your site, e.g. ACME Corp.
-
+markdown: kramdown
 
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data", "fenced_code_blocks"]
