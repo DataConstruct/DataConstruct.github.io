@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '4.0.0'
-gem 'kramdown', '2.1.0'
-gem 'kramdown-syntax-coderay', '1.0.1'
+gem 'jekyll', '3.8.5'
+gem 'github-pages', '198', group: :jekyll_plugins
+gem 'kramdown', '1.17.0'
+gem 'rouge', '2.2.1'
